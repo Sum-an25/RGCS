@@ -7,12 +7,13 @@ Dialog {
     property string commandName: ""
     property string prompt: ""
     property bool askAltitude: false
+    property bool requireSlide: false
     property real altitude: 30
     signal acceptedCommand(real value)
 
-    title: commandName
+    title: commandName.toUpperCase()
     modal: true
-    standardButtons: Dialog.Cancel | Dialog.Ok
+    standardButtons: requireSlide ? Dialog.Cancel : Dialog.Cancel | Dialog.Ok
 
     ColumnLayout {
         width: 360
@@ -26,6 +27,16 @@ Dialog {
             editable: true
             onValueChanged: dialog.altitude = value
             Layout.fillWidth: true
+        }
+
+        SlideToConfirm {
+            visible: dialog.requireSlide
+            Layout.fillWidth: true
+            text: "Slide to confirm " + dialog.commandName.toUpperCase()
+            onConfirmed: {
+                dialog.acceptedCommand(0)
+                dialog.close()
+            }
         }
     }
 

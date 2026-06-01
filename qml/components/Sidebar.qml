@@ -29,6 +29,7 @@ Rectangle {
             delegate: SidebarButton {
                 Layout.fillWidth: true
                 text: modelData
+                iconText: modelData === "Home" ? "H" : modelData === "Fly" ? "F" : modelData === "Plan" ? "P" : modelData === "Setup" ? "S" : modelData === "Settings" ? "G" : "L"
                 active: root.currentScreen === modelData
                 onClicked: root.navigate(modelData)
             }

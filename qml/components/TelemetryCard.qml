@@ -7,14 +7,31 @@ Rectangle {
     property string value: ""
     property string unit: ""
     radius: 6
-    color: "#0b1e31"
-    border.color: "#203b55"
-    implicitHeight: 62
+    color: "#0b1e3100"
+    border.color: "transparent"
+    implicitHeight: 32
 
     RowLayout {
         anchors.fill: parent
-        anchors.margins: 10
-        Label { text: label; color: "#9fb8cc"; font.pixelSize: 12; Layout.fillWidth: true; elide: Text.ElideRight }
-        Label { text: value + (unit.length ? " " + unit : ""); color: "#f4fbff"; font.pixelSize: 18; font.bold: true }
+        anchors.leftMargin: 2
+        anchors.rightMargin: 2
+        spacing: 8
+
+        Label {
+            text: label
+            color: "#9fb8cc"
+            font.pixelSize: 12
+            Layout.fillWidth: true
+            elide: Text.ElideRight
+        }
+
+        Label {
+            text: value + (unit.length ? " " + unit : "")
+            color: "#f4fbff"
+            font.pixelSize: 15
+            font.bold: true
+            horizontalAlignment: Text.AlignRight
+            elide: Text.ElideRight
+        }
     }
 }

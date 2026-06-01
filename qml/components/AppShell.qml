@@ -30,7 +30,7 @@ Item {
 
             TopStatusBar {
                 Layout.fillWidth: true
-                Layout.preferredHeight: 58
+                Layout.preferredHeight: 62
             }
 
             Loader {

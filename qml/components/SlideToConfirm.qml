@@ -12,7 +12,7 @@ Item {
         radius: 6
         color: "#3a1420"
         border.color: "#b73b4c"
-        Text { anchors.centerIn: parent; text: root.text; color: "#ffdce1"; font.bold: true }
+        Text { anchors.centerIn: parent; text: root.text; color: "#ffdce1"; font.bold: true; elide: Text.ElideRight; width: parent.width - 78; horizontalAlignment: Text.AlignHCenter }
     }
 
     Rectangle {
